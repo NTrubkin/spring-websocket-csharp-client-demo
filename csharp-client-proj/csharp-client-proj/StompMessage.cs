@@ -41,7 +41,7 @@ namespace WebSocketClient
             Body = body;
             _headers = headers;
 
-            this["content-length"] = body.Length.ToString();
+            this["content-length"] = Encoding.UTF8.GetByteCount(Body).ToString();
         }
 
         public Dictionary<string, string> Headers

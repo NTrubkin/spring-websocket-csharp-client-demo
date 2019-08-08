@@ -12,12 +12,18 @@ spring-boot-application/.idea/
 spring-boot-application/target/
 spring-boot-application/out/
 
+spring-websocket-test-server/*.iml
+spring-websocket-test-server/.idea/
+spring-websocket-test-server/target/
+spring-websocket-test-server/out/
+
 bin/*.jar
 
 csharp-client-proj/csharp-client-proj/bin
 csharp-client-proj/csharp-client-proj/obj
 csharp-client-proj/csharp-client-proj.csproj.user
 csharp-client-proj/packages
+csharp-client-proj/.vs/
 
 # Mobile Tools for Java (J2ME)
 .mtj.tmp/

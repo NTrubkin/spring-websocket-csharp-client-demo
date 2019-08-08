@@ -11,27 +11,24 @@ namespace WebSocketClient
     {
         static void Main(string[] args)
         {
-            using (var ws = new WebSocket("ws://localhost:8080/my-ws/websocket"))
+            using (var ws = new WebSocket("ws://localhost:8080/ws/websocket"))
             {
                 int clientId = 999;
+                var serializer = new StompMessageSerializer();
 
                 ws.OnOpen += (sender, e) =>
                 {
                     Console.WriteLine("Spring says: open");
-                    StompMessageSerializer serializer = new StompMessageSerializer();
 
                     var connect = new StompMessage("CONNECT");
                     connect["accept-version"] = "1.1";
                     connect["heart-beat"] = "10000,10000";
                     ws.Send(serializer.Serialize(connect));
 
-                    
-                    
                     var sub = new StompMessage("SUBSCRIBE");
                     sub["id"] = "sub-" + clientId;
-                    sub["destination"] = "/topics/event";
+                    sub["destination"] = "/topic/greetings";
                     ws.Send(serializer.Serialize(sub));
-                    
                 };
                 
                 ws.OnError += (sender, e) =>
@@ -40,7 +37,11 @@ namespace WebSocketClient
                 Console.WriteLine("Spring says: " + e.Data);
 
                 ws.Connect();
-               
+
+                var helloMessage = new StompMessage("SEND", "{\"name\":\"Nikita\"}");
+                helloMessage["destination"] = "/app/hello";
+                ws.Send(serializer.Serialize(helloMessage));
+
                 Console.ReadKey(true);
             }
         }
