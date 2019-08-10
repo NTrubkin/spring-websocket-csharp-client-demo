@@ -25,6 +25,12 @@ csharp-client-proj/csharp-client-proj.csproj.user
 csharp-client-proj/packages
 csharp-client-proj/.vs/
 
+stomp-client/.idea/
+stomp-client/.vs/
+stomp-client/bin/
+stomp-client/obj/
+stomp-client/packages/
+
 # Mobile Tools for Java (J2ME)
 .mtj.tmp/
 
@@ -38,3 +44,9 @@ csharp-client-proj/.vs/
 
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
+
+stomp-client/Builder/StompSendBuilder.cs
+stomp-client/Builder/StompSubscribeBuilder.cs
+stomp-client/Program.cs
+
+*.user
