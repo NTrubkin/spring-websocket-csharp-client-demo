@@ -26,7 +26,7 @@ namespace NikitaTrubkin.StompClient
 
             return buffer.ToString();
         }
-        
+
         public StompMessage Deserialize(string message)
         {
             var reader = new StringReader(message);

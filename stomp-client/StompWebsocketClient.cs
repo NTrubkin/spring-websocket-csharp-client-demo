@@ -1,7 +1,7 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Text;
-using Newtonsoft.Json;
 using WebSocketSharp;
 using static NikitaTrubkin.StompClient.StompConnectionState;
 
@@ -10,9 +10,15 @@ namespace NikitaTrubkin.StompClient
     public class StompWebsocketClient : IStompClient
     {
         // todo: implement this
+#pragma warning disable CS0067 // Событие "StompWebsocketClient.OnOpen" никогда не используется.
         public event EventHandler OnOpen;
+#pragma warning restore CS0067 // Событие "StompWebsocketClient.OnOpen" никогда не используется.
+#pragma warning disable CS0067 // Событие "StompWebsocketClient.OnClose" никогда не используется.
         public event EventHandler<CloseEventArgs> OnClose;
+#pragma warning restore CS0067 // Событие "StompWebsocketClient.OnClose" никогда не используется.
+#pragma warning disable CS0067 // Событие "StompWebsocketClient.OnError" никогда не используется.
         public event EventHandler<ErrorEventArgs> OnError;
+#pragma warning restore CS0067 // Событие "StompWebsocketClient.OnError" никогда не используется.
 
         private readonly WebSocket socket;
         private readonly StompMessageSerializer stompSerializer = new StompMessageSerializer();
@@ -65,7 +71,7 @@ namespace NikitaTrubkin.StompClient
             socket.Send(stompSerializer.Serialize(subscribeMessage));
             // todo: check response
             // todo: implement advanced topic
-            var sub = new Subscriber((sender, body) => handler(this, (T) body), typeof(T));
+            var sub = new Subscriber((sender, body) => handler(this, (T)body), typeof(T));
             subscribers.Add(topic, sub);
         }
 
@@ -75,7 +81,7 @@ namespace NikitaTrubkin.StompClient
                 throw new InvalidOperationException("The current state of the connection is not Open.");
 
             State = Closed;
-            ((IDisposable) socket).Dispose();
+            ((IDisposable)socket).Dispose();
             // todo: unsubscribe
         }
 

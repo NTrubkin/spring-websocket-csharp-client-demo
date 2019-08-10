@@ -17,7 +17,7 @@ namespace NikitaTrubkin.StompClient
             : this(command, body, new Dictionary<string, string>())
         {
         }
-        
+
         public StompMessage(string command, IDictionary<string, string> headers)
             : this(command, string.Empty, headers)
         {

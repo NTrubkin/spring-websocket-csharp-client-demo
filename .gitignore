@@ -12,10 +12,10 @@ spring-boot-application/.idea/
 spring-boot-application/target/
 spring-boot-application/out/
 
-spring-websocket-test-server/*.iml
-spring-websocket-test-server/.idea/
-spring-websocket-test-server/target/
-spring-websocket-test-server/out/
+spring-demo-server/*.iml
+spring-demo-server/.idea/
+spring-demo-server/target/
+spring-demo-server/out/
 
 bin/*.jar
 
@@ -30,6 +30,16 @@ stomp-client/.vs/
 stomp-client/bin/
 stomp-client/obj/
 stomp-client/packages/
+
+csharp-demo-client/.idea/
+csharp-demo-client/.vs/
+csharp-demo-client/target/
+csharp-demo-client/out/
+csharp-demo-client/packages/
+csharp-demo-client/bin/
+csharp-demo-client/obj/
+
+
 
 # Mobile Tools for Java (J2ME)
 .mtj.tmp/

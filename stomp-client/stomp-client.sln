@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29201.188
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "stomp-client", "stomp-client.csproj", "{9DC4DFA4-724A-4CE0-BBD3-2F71E9435ADE}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "stomp-client", "stomp-client.csproj", "{9C0C3B40-6417-460B-BE00-3F50A9042C45}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{9DC4DFA4-724A-4CE0-BBD3-2F71E9435ADE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{9DC4DFA4-724A-4CE0-BBD3-2F71E9435ADE}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{9DC4DFA4-724A-4CE0-BBD3-2F71E9435ADE}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{9DC4DFA4-724A-4CE0-BBD3-2F71E9435ADE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9C0C3B40-6417-460B-BE00-3F50A9042C45}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9C0C3B40-6417-460B-BE00-3F50A9042C45}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9C0C3B40-6417-460B-BE00-3F50A9042C45}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9C0C3B40-6417-460B-BE00-3F50A9042C45}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {4E9CF133-5214-4F09-822D-A55A84B53D86}
+		SolutionGuid = {FCA24A49-1905-47CB-A5EB-E4EA77822165}
 	EndGlobalSection
 EndGlobal
