@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace NikitaTrubkin.StompClient.Model
+namespace NikitaTrubkin.StompClient
 {
     public class StompMessage
     {

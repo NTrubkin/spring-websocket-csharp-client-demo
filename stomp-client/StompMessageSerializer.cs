@@ -1,17 +1,11 @@
 ﻿using System.Collections.Generic;
 using System.IO;
 using System.Text;
-using NikitaTrubkin.StompClient.Model;
 
 namespace NikitaTrubkin.StompClient
 {
     public class StompMessageSerializer
     {
-        /// <summary>
-        ///   Serializes the specified message.
-        /// </summary>
-        /// <param name = "message">The message.</param>
-        /// <returns>A serialized version of the given <see cref="StompMessage"/></returns>
         public string Serialize(StompMessage message)
         {
             var buffer = new StringBuilder();
@@ -32,12 +26,7 @@ namespace NikitaTrubkin.StompClient
 
             return buffer.ToString();
         }
-
-        /// <summary>
-        /// Deserializes the specified message.
-        /// </summary>
-        /// <param name="message">The message.</param>
-        /// <returns>A <see cref="StompMessage"/> instance</returns>
+        
         public StompMessage Deserialize(string message)
         {
             var reader = new StringReader(message);

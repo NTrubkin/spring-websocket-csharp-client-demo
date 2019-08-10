@@ -48,5 +48,7 @@ hs_err_pid*
 stomp-client/Builder/StompSendBuilder.cs
 stomp-client/Builder/StompSubscribeBuilder.cs
 stomp-client/Program.cs
+stomp-client/Greeting.cs
+stomp-client/HelloMessage.cs
 
 *.user

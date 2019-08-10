@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Text;
 using Newtonsoft.Json;
-using NikitaTrubkin.StompClient.Model;
 using WebSocketSharp;
 using static NikitaTrubkin.StompClient.StompConnectionState;
 
@@ -10,6 +9,7 @@ namespace NikitaTrubkin.StompClient
 {
     public class StompWebsocketClient : IStompClient
     {
+        // todo: implement this
         public event EventHandler OnOpen;
         public event EventHandler<CloseEventArgs> OnClose;
         public event EventHandler<ErrorEventArgs> OnError;
@@ -17,8 +17,7 @@ namespace NikitaTrubkin.StompClient
         private readonly WebSocket socket;
         private readonly StompMessageSerializer stompSerializer = new StompMessageSerializer();
 
-        private readonly IDictionary<string, EventHandler<object>> subscribers =
-            new Dictionary<string, EventHandler<object>>();
+        private readonly IDictionary<string, Subscriber> subscribers = new Dictionary<string, Subscriber>();
 
         public StompConnectionState State { get; private set; } = Closed;
 
@@ -66,7 +65,8 @@ namespace NikitaTrubkin.StompClient
             socket.Send(stompSerializer.Serialize(subscribeMessage));
             // todo: check response
             // todo: implement advanced topic
-            subscribers.Add(topic, (sender, body) => handler(this, (T) body));
+            var sub = new Subscriber((sender, body) => handler(this, (T) body), typeof(T));
+            subscribers.Add(topic, sub);
         }
 
         public void Dispose()
@@ -82,9 +82,9 @@ namespace NikitaTrubkin.StompClient
         private void HandleMessage(object sender, MessageEventArgs messageEventArgs)
         {
             var message = stompSerializer.Deserialize(messageEventArgs.Data);
-            var key = message.Headers["destination"];
-            var body = JsonConvert.DeserializeObject(message.Body, typeof(Greeting));
-            subscribers[key](sender, body);
+            var sub = subscribers[message.Headers["destination"]];
+            var body = JsonConvert.DeserializeObject(message.Body, sub.BodyType);
+            sub.Handler(sender, body);
         }
     }
 }

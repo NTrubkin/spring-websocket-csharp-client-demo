@@ -32,6 +32,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed">
       <HintPath>packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
@@ -52,16 +55,17 @@
   <ItemGroup>
     <Compile Include="Builder\StompSendBuilder.cs" />
     <Compile Include="Builder\StompSubscribeBuilder.cs" />
+    <Compile Include="Greeting.cs" />
+    <Compile Include="HelloMessage.cs" />
     <Compile Include="IStompClient.cs" />
-    <Compile Include="Model\Greeting.cs" />
-    <Compile Include="Model\HelloMessage.cs" />
-    <Compile Include="Model\StompMessage.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="StompCommand.cs" />
     <Compile Include="StompConnectionState.cs" />
+    <Compile Include="StompMessage.cs" />
     <Compile Include="StompMessageSerializer.cs" />
     <Compile Include="StompWebsocketClient.cs" />
+    <Compile Include="Subscriber.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
