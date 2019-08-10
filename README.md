@@ -1,3 +1,5 @@
-# spring-websocket-csharp-client-demo
+# stomp-csharp-client
 
-Demo of connecting C# client to spring web application via stomp over websocket
+Stomp C# client over websockets
+
+[NuGet](https://www.nuget.org/packages/StompClient)
